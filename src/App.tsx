@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <div className={styles.root}>
+          <div>
             <Route path="/" component={Home}/>
           </div>
         </Provider>

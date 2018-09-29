@@ -1,13 +1,10 @@
 import * as React from "react";
-import { TMEventService } from "../api/TMEventService";
 import { connect } from "react-redux";
 import { State } from "../store/models";
 
-
 interface MappedStateProps {
-  shows: SearchTVResult[];
+  events: unknown[];
   isSearching: boolean;
-  thumbConfig: undefined | ((path: string) => string);
 }
 
 interface MappedDispatchProps {
@@ -18,15 +15,15 @@ type Props = MappedStateProps & MappedDispatchProps;
 
 class _Home extends React.Component<Props> {
   public render() {
-
+    return "Lets see...";
   }
 }
 
 export const Home = connect(
-  (state: State): MappedStateProps => ({
+  // (state: State): MappedStateProps => ({
 
-  }),
-  ({ trailer }: any): MappedDispatchProps => ({
+  // }),
+  // ({ trailer }: any): MappedDispatchProps => ({
     
-  })
+  // })
 )(_Home);
