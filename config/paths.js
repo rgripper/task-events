@@ -54,5 +54,5 @@ module.exports = {
   appTsProdConfig: resolveApp('tsconfig.prod.json'),
   appTsLint: resolveApp('tslint.json'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
-  servedPath: '/task-my-shows/',//getServedPath(resolveApp('package.json')),
+  servedPath: '/task-events/',//getServedPath(resolveApp('package.json')),
 };
