@@ -64,15 +64,11 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
-      ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform",
       "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
     ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
     "moduleFileExtensions": [
       "web.ts",
       "ts",
@@ -91,14 +87,9 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "C:\\github\\task-my-shows\\tsconfig.test.json"
+        "tsConfigFile": "tsconfig.test.json"
       }
     }
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
   },
   "description": "Events browser",
   "main": "index.js",

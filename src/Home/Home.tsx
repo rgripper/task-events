@@ -8,12 +8,12 @@ interface MappedStateProps {
 }
 
 interface MappedDispatchProps {
-  onPlayTrailer: (id: number) => void;
+
 }
 
 type Props = MappedStateProps & MappedDispatchProps;
 
-class _Home extends React.Component<Props> {
+export class _Home extends React.Component<Props> {
   public render() {
     return "Lets see...";
   }
