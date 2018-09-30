@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@rematch/core@^1.0.0-beta.4":
-  version "1.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@rematch/core/-/core-1.0.0-beta.5.tgz#b1d7dc621de3f5edbb5a9f92df8c26217c36397c"
-  integrity sha512-8yy7e8Xkz3i072dQNmAQyrkGY9N3n0JBOHmSUmH2v5bAbtXGMvZZIc6vtxoSM+q68vrDAkdZASDgLqRRz90gwQ==
+"@rematch/core@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@rematch/core/-/core-1.0.1.tgz#a1d767d03cf780ad8ba94a1b96a3a6af2f199e5a"
+  integrity sha512-YHkQSFUE7g+5wTKsiJgGh9Cx2/T2Iby1pogTkK07+ao6hgPNDaw/4elX1HTknj43cmPShBhbU/oJfVr62ns+Lg==
   dependencies:
     redux "4.0.0"
 
