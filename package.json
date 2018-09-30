@@ -4,6 +4,7 @@
   "private": false,
   "dependencies": {
     "@rematch/core": "^1.0.0-beta.4",
+    "axios": "^0.18.0",
     "file-loader": "2.0.0",
     "fork-ts-checker-webpack-plugin": "^0.4.9",
     "memoize-one": "^4.0.2",
