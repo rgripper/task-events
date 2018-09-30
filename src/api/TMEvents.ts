@@ -130,3 +130,7 @@ export interface Product {
   type: string;
   name: string;
 }
+
+export interface EventsResponse {
+  _embedded: EmbeddedEvents;
+}

@@ -9,8 +9,8 @@ const client = {
 }
 
 export class TMEventService {
-  async getEvents(countryCode: string): Promise<TMEvents.Event[]> {
-    const response = await client.get<{ _embedded: TMEvents.EmbeddedEvents }>('events', { countryCode });
+  async getEvents(countryCode: string, keyword: string): Promise<TMEvents.Event[]> {
+    const response = await client.get<TMEvents.EventsResponse>('events', { countryCode, keyword });
     return response.data._embedded.events;
   }
 }
