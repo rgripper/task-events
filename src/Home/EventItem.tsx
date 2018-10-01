@@ -6,14 +6,20 @@ interface Props {
   event: TMEvents.Event;
 }
 
-const Container = styled("div")`
+const Container = styled("a")`
+  color: #333;
+  text-decoration: none;
   position: relative;
   height: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  
+
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(124, 124, 0, 0.25);
+  }
+
   > img {
     flex: 1;
   }
@@ -28,7 +34,7 @@ const ThumbImage = styled("img")`
   }
 `;
 
-const Price = styled('span')`
+const Price = styled("span")`
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
@@ -55,8 +61,12 @@ export const EventItem: React.SFC<Props> = props => {
   const image = getThumbImage(props.event.images);
   const priceRange = props.event.priceRanges && props.event.priceRanges[0];
   return (
-    <Container>
-      {priceRange && <Price>{priceRange.min} - {priceRange.max} AUD</Price>}
+    <Container target="_blank" href={props.event.url}>
+      {priceRange && (
+        <Price>
+          {priceRange.min} - {priceRange.max} AUD
+        </Price>
+      )}
       <ThumbImage src={image ? image.url : ""} />
       <Description>{props.event.name}</Description>
     </Container>
