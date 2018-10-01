@@ -31,6 +31,6 @@ export class TMEventService {
       keyword,
       ...locationParam
     });
-    return response.data._embedded.events;
+    return response.data._embedded ? response.data._embedded.events : [];
   }
 }

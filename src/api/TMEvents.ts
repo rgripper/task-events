@@ -14,7 +14,7 @@ export interface Event {
   dates: Dates;
   classifications: Classification[];
   info: string;
-  priceRanges: PriceRange[];
+  priceRanges?: PriceRange[];
   seatmap: Seatmap;
   ticketLimit: TicketLimit;
   pleaseNote: string;
@@ -132,5 +132,5 @@ export interface Product {
 }
 
 export interface EventsResponse {
-  _embedded: EmbeddedEvents;
+  _embedded?: EmbeddedEvents;
 }
