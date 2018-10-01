@@ -10,9 +10,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <div>
-            <Route path="/" component={Home}/>
-          </div>
+          <Route path="/" component={Home}/>
         </Provider>
       </BrowserRouter>
     );

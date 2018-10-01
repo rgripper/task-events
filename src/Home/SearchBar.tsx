@@ -3,6 +3,7 @@ import { RootState } from "../store/models";
 import { connect } from "react-redux";
 import memoizeOne from "memoize-one";
 import { debounce } from "throttle-debounce";
+import styled from 'react-emotion';
 
 interface MappedStateProps {
   value: string;
@@ -14,6 +15,26 @@ interface MappedDispatchProps {
 
 type Props = MappedStateProps & MappedDispatchProps;
 
+const Container = styled('div')`
+  display: flex;
+  border: 0.075rem solid #ccc;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  color: #ccc;
+
+  > i {
+    margin-right: 0.5rem;
+  }
+
+  > input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    font-size: 1.125rem;
+  }
+`;
+
 class _SearchBar extends React.Component<Props> {
 
   // make sure we cache and use the same debouncer
@@ -21,14 +42,14 @@ class _SearchBar extends React.Component<Props> {
 
   render() {
     return (
-      <div>
+      <Container>
         <i className="fa fa-search" />
         <input
           type="text"
-          placeholder="Search title..."
+          placeholder="Search keyword, e.g. music..."
           onChange={event => this.memoizeDebounce(this.props.onChange)(event.currentTarget.value)}
         />
-      </div>
+      </Container>
     );
   }
 }
