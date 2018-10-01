@@ -1,6 +1,6 @@
 {
   "name": "task-events",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": false,
   "dependencies": {
     "@rematch/core": "1.0.1",
