@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import { injectGlobal } from "emotion";
+import { store } from './store/store';
 
 injectGlobal`
   body {
@@ -15,6 +16,9 @@ injectGlobal`
     }
   }
 `
+
+// we get location once
+store.dispatch.userSettings.requestLocation();
 
 ReactDOM.render(<App/>, document.getElementById("root") as HTMLElement);
 registerServiceWorker();

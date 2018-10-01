@@ -4,7 +4,7 @@ import { _Home } from "./Home";
 
 describe("<Home />", () => {
   const setup = () => {
-    return shallow(<_Home isSearching={false} events={[]} />);
+    return shallow(<_Home isSearching={false} events={[]} userSettings={{ countryCode: 'AU' }} />);
   };
 
   it("should render successfully", () => {

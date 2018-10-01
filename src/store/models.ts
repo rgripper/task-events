@@ -6,6 +6,7 @@ const tmEventService = new TMEventService();
 
 export interface RootState {
   events: typeof events.state;
+  userSettings: typeof userSettings.state;
 }
 
 export interface EventsState {
@@ -33,12 +34,31 @@ export const events = createModel({
     }
   },
   effects: {
-    async load(keyword: string) {
+    async load(keyword: string, state: RootState) {
       if (keyword.length < 3) return;
 
       this.startKeywordSearch(keyword);
-      const shows = await tmEventService.getEvents("AU", keyword);
-      this.trySetKeywordSearchResults(keyword, shows);
+      const events = await tmEventService.getEvents(keyword, state.userSettings);
+      this.trySetKeywordSearchResults(keyword, events);
+    }
+  }
+});
+
+export interface UserSettingsState {
+  countryCode: string;
+  coordinates?: Coordinates;
+}
+
+export const userSettings = createModel({
+  state: { countryCode: 'AU' } as UserSettingsState,
+  reducers: {
+    setCoordinates(state: UserSettingsState, coordinates: Coordinates): UserSettingsState {
+      return { ...state, coordinates };
+    },
+  },
+  effects: {
+    async requestLocation() {
+      navigator.geolocation.getCurrentPosition(position => this.setCoordinates(position.coords), error => console.log(error));
     }
   }
 });

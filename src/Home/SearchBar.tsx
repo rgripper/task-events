@@ -59,6 +59,6 @@ export const SearchBar = connect(
     value: state.events.keyword
   }),
   ({ events }: any): MappedDispatchProps => ({
-    onChange: (query: string) => events.load(query)
+    onChange: (keyword: string) => events.load(keyword)
   })
 )(_SearchBar);

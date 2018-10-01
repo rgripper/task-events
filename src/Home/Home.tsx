@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { RootState } from "../store/models";
+import { RootState, UserSettingsState } from "../store/models";
 import * as TMEvents from "../api/TMEvents";
 import { EventItem } from "./EventItem";
 import { SearchBar } from "./SearchBar";
@@ -10,6 +10,7 @@ import { Loader } from "./Loader";
 interface MappedStateProps {
   events: TMEvents.Event[];
   isSearching: boolean;
+  userSettings: UserSettingsState;
 }
 
 type Props = MappedStateProps;
@@ -59,12 +60,25 @@ const NoResults = styled("div")`
   font-size: 1.125rem;
 `;
 
+const SearchHint = styled("small")`
+  color: #ccc;
+  font-size: 0.75rem;
+  padding: 0.5rem 0;
+`;
+
 export class _Home extends React.Component<Props> {
   public render() {
     return (
       <Container>
         <SearchBarContainer>
           <SearchBar />
+          <SearchHint>
+            {this.props.userSettings.coordinates
+              ? `Search around coordinates: ${
+                  this.props.userSettings.coordinates.latitude
+                }, ${this.props.userSettings.coordinates.longitude}`
+              : `Search in country: ${this.props.userSettings.countryCode}`}
+          </SearchHint>
         </SearchBarContainer>
 
         {this.props.isSearching ? (
@@ -92,6 +106,7 @@ export class _Home extends React.Component<Props> {
 export const Home = connect(
   (state: RootState): MappedStateProps => ({
     events: state.events.items,
-    isSearching: state.events.isSearching
+    isSearching: state.events.isSearching,
+    userSettings: state.userSettings
   })
 )(_Home);
