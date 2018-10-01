@@ -23,10 +23,6 @@ Usual commands: `yarn start`, `yarn test`, `yarn build`.
 - `react-router` for navigation
 - `jest` with `enzyme` for testing
 
-### Tests
-
-For demo purposes there are 2 tests in `/src/Home/ShowItem.spec.tsx`.
-
 ### Based on my other repo
 https://github.com/rgripper/task-my-shows
 
