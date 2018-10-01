@@ -19,9 +19,10 @@ export class TMEventService {
     const locationParam =
       "coordinates" in location
         ? {
-            geopoint: Geohash.encode(
+            geoPoint: Geohash.encode(
               location.coordinates.latitude,
-              location.coordinates.longitude
+              location.coordinates.longitude,
+              9
             )
           }
         : location;
