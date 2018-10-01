@@ -1,6 +1,6 @@
 ## Events browser
 
-This an event browser with search results based either on the user location (if allowed) or just around Australia (if location is denied).
+This an event browser with search results based either on the user location (if allowed) or just around Australia (if location is denied). There are some events returned by Ticketmaster for test purposes that look like duplicates - this is not a bug.
 
 You can check out deployed build here (responsive):
 https://rgripper.github.io/task-events/
