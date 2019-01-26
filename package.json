@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/classnames": "^2.2.6",
     "@types/enzyme": "^3.1.13",
+    "@types/glob": "^7.1.1",
     "@types/jest": "^23.3.1",
     "@types/latlon-geohash": "^1.1.0",
     "@types/memoize-one": "^3.1.1",
@@ -45,11 +46,13 @@
     "jest": "23.6.0",
     "ts-jest": "23.10.2",
     "ts-loader": "^5.2.1",
+    "ts-node": "^8.0.1",
+    "ts-transform-import-path-rewrite": "^0.1.1",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.10.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^3.0.3",
+    "typescript": "^3.2.4",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.9"

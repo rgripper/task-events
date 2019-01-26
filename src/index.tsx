@@ -5,6 +5,8 @@ import registerServiceWorker from "./registerServiceWorker";
 import { injectGlobal } from "emotion";
 import { store } from './store/store';
 
+export { store } from 'root/store/store';
+
 injectGlobal`
   body {
     padding: 0;

@@ -1,6 +1,6 @@
 import { createModel } from "@rematch/core";
-import { TMEventService } from "../api/TMEventService";
-import * as TMEvents from "../api/TMEvents";
+import { TMEventService } from "root/api/TMEventService";
+import * as TMEvents from "root/api/TMEvents";
 
 const tmEventService = new TMEventService();
 
